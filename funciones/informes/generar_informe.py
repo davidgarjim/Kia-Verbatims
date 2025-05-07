@@ -3,6 +3,7 @@ import pandas as pd
 from openai import OpenAI
 import tiktoken
 import streamlit as st
+import s3fs
 
 OPENAI_API_KEY = st.secrets["openai"]["api_key"]
 client = OpenAI(api_key=OPENAI_API_KEY)
@@ -89,8 +90,6 @@ CONSIDERACIONES CLAVE:
     - cuando haya problemas (como un taller o modelo con puntuaciones muy bajas), se debe explicar el impacto real que puede tener en la experiencia de cliente, la reputación o el negocio y buscar en los comentarios el porqué, intenta que sea un volumen significativo las personas que mencionan ese porqué y referencia con números.
 """
 
-
-informe = ""
 
 def funcion_informe(df, tipo_servicio):
     # Carpeta donde están los informes
@@ -242,3 +241,24 @@ def generar_informe():
 # Ejecutar directamente al correr el script
 if __name__ == "__main__":
     generar_informe()
+
+
+
+
+def print_informe(tipo_servicio):
+    # Configuración S3
+    fs = s3fs.S3FileSystem(
+        key=st.secrets["aws"]["access_key_id"],
+        secret=st.secrets["aws"]["secret_access_key"],
+        client_kwargs={"region_name": st.secrets["aws"]["region"]}
+    )
+
+    if tipo_servicio == "Ventas":
+        ruta = "kia-verbatims-data/informes/informeventas.txt"
+    else:
+        ruta = "kia-verbatims-data/informes/informeposventa.txt"
+
+    with fs.open(ruta, 'r') as f:
+        informe = f.read()
+
+    return informe

@@ -1,6 +1,6 @@
 #from funciones.limpieza.preparacion import leer_concatenar_y_preparar
 #from funciones.limpieza.preparacion2 import preparar_datos2
-#from funciones.informes.generar_informe import funcion_informe, informe
+from funciones.informes.generar_informe import print_informe
 from funciones.chatbot.chatbot import funcion_chatbot
 #from funciones.informes.descargar_informe import descargar_informe
 import pandas as pd
@@ -10,6 +10,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 from pathlib import Path
 import polars as pl
+import s3fs
 
 # — Autenticación por contraseña —
 if "authenticated" not in st.session_state:
@@ -97,8 +98,9 @@ if segmentacion == 'General':
     # ================== GRÁFICOS GENERAL================== #
     if gen_todo:
         #with st.expander("Ver Conclusiones Generales"):
-        informe = funcion_informe(df_actual, tipo_servicio)
+        informe = print_informe(tipo_servicio)
         st.markdown(informe)
+
         #descargar_informe(informe)
 
         st.header('Gráficos Generales:')

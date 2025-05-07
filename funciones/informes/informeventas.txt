@@ -1,0 +1,130 @@
+## INFORME DE EXPERIENCIA DE USUARIO DE ENERO A ABRIL 2025 EN TALLERES KIA
+
+**Introducción**  
+Este informe sintetiza el análisis de 249 valoraciones recogidas entre el 1 de enero y el 29 de abril de 2025 en talleres oficiales Kia. Los datos proceden de verbatims voluntarios de clientes (“Comentarios”), con puntuaciones de satisfacción (1 muy malo–8 muy bueno). Aunque aportan insights valiosos, cabe considerar un posible sesgo de quienes deciden compartir su opinión.
+
+---
+
+## HALLAZGOS CLAVE
+
+- **Promedio general**: 6,47 sobre 8.  
+- **Tecnología**  
+  - Gasolina (121 valoraciones, 48,6 %): 6,81  
+  - Híbrido (82, 32,9 %): 6,41  
+  - Eléctrico (46, 18,5 %): 5,24  
+  → Los clientes de vehículos eléctricos registran la satisfacción más baja, un reto estratégico.
+
+- **Modelo crítico**  
+  - **EV3(SV)** (40 valoraciones, 16,1 %): media 4,93.  
+    Comentarios recurrentes sobre fallos en el ICCU, manuales confusos y demoras > 1 semana en taller.
+
+- **Tendencia temporal**  
+  | Mes | Valoraciones | Media |
+  |-----|-------------:|------:|
+  | Ene | 66           | 6,42  |
+  | Feb | 64           | 6,73  |
+  | Mar | 64           | 6,19  |
+  | Abr | 55           | 6,18  |
+
+  → Tras un pico en febrero, la satisfacción desciende en marzo-abril.
+
+- **Demoras en servicio**  
+  - 44 comentarios aluden a “espera”, “demora” o “tardanza” (17,7 % del total).  
+  - Media de satisfacción en esos casos: 5,16, muy por debajo del global.
+
+---
+
+## ÁREAS DE OPORTUNIDAD Y RIESGO
+
+1. **Talleres en riesgo (puntuación < 5)**  
+   | Taller                      | Valoraciones | Media | % del total |
+   |-----------------------------|-------------:|------:|------------:|
+   | TALENTO MOTOR, S.L.         | 4            | 2,75  | 1,6 %       |
+   | MOBILIFY ALJARAFE, S.L.     | 3            | 3,33  | 1,2 %       |
+   | MAS MOTOR, S.A.             | 7            | 3,71  | 2,8 %       |
+
+   **Motivos**  
+   - “1 semana funcionando, y más de 8 días en el taller.”  
+   - “Me entregaron el coche … y estaba sin revisar.”  
+   - “Problemas iniciales de software que dejaron el vehículo parado.”
+
+2. **Modelo en riesgo**  
+   - **EV3(SV)**: 16,1 % del total, media 4,93.  
+   - Incidencias frecuentes en ICCU, manuales poco claros y tiempos de espera prolongados.
+
+3. **Tecnología eléctrica**  
+   - 18,5 % de las valoraciones, pero satisfacción un 20 % inferior a gasolina.  
+   - Concentran las quejas de demoras y fallos técnicos.
+
+---
+
+## TEMPORALIDAD
+
+- **Evolución mensual**: satisfacción decreciente en marzo y abril tras pico en febrero.  
+- **Percepción de demora**  
+  - Malo: espera > 5 días  
+  - Aceptable: 2–4 días  
+  - Excelente: < 48 horas  
+  - Un 17,7 % insiste en revisar procesos logísticos y planificar citas con mayor precisión.
+
+- **Cobertura de datos**  
+  - Algunos talleres no registran valoraciones en ciertos meses (ej. AKI MADRID AUTOMOCIÓN, variantes de nombre).  
+  - Riesgo de “puntos ciegos” por inconsistencias en la recogida de feedback.
+
+---
+
+## TALLERES
+
+1. **Peor puntuados (< 5)**  
+   | Taller                  | Media | Valoraciones | % total |
+   |-------------------------|------:|-------------:|--------:|
+   | TALENTO MOTOR, S.L.     | 2,75  | 4            | 1,6 %   |
+   | MOBILIFY ALJARAFE, S.L. | 3,33  | 3            | 1,2 %   |
+   | MAS MOTOR, S.A.         | 3,71  | 7            | 2,8 %   |
+
+   **Razones detectadas**: largas esperas (> 1 semana), seguimientos deficientes, reparaciones incompletas.
+
+2. **Mejor puntuados** (≥ 3 valoraciones)  
+   | Taller                         | Media | Valoraciones | % total |
+   |--------------------------------|------:|-------------:|--------:|
+   | AKI MADRID AUTOMOCIÓN, S.L.    | 8,00  | 4            | 1,6 %   |
+   | AUTOS SELIKAR, S.L.            | 8,00  | 3            | 1,2 %   |
+   | AUTO VIDAL Y TALLERES, S.L.    | 7,75  | 4            | 1,6 %   |
+
+   **Puntos fuertes**  
+   - Atención personalizada y ágil proceso de entrega.  
+   - Resolución proactiva de incidencias.  
+   - Trato cercano y adaptado a cada cliente.
+
+3. **Diferencias clave en comentarios**  
+   - **Baja satisfacción**: enfoque técnico, largas esperas, falta de comunicación.  
+   - **Alta satisfacción**: trato personalizado, rapidez en recogida/entrega, proactividad.
+
+---
+
+## MODELOS Y TECNOLOGÍA
+
+| Tecnología | Media | Valoraciones | % total |
+|------------|------:|-------------:|--------:|
+| Gasolina   | 6,81  | 121          | 48,6 %  |
+| Híbrido    | 6,41  | 82           | 32,9 %  |
+| Eléctrico  | 5,24  | 46           | 18,5 %  |
+
+- **EV3(SV)** (40 valoraciones, 16,1 %): media 4,93.  
+  Incidencias recurrentes en ICCU, manuales confusos y demoras de hasta 2 semanas.
+
+- En **Talento Motor** y **Mas Motor**, el EV3 concentra casi todas las quejas de eléctricos; en **Autos Selikar** y **Auto Vidal**, obtiene valoraciones por encima de 6.
+
+---
+
+## CONCLUSIONES
+
+1. **Optimizar gestión de citas y tiempos de taller** para reducir demoras que penalizan la satisfacción (17,7 % menciones, media 5,16).  
+2. **Reforzar postventa de eléctricos**, especialmente EV3(SV): revisar manuales, software ICCU y cadena de recambios.  
+3. **Estandarizar recogida de feedback** (nomenclatura de talleres y periodicidad) para evitar puntos ciegos.  
+4. **Escalar buenas prácticas** de los top 3 talleres (trato personalizado, agilidad y proactividad) al resto de la red.
+
+> **Próximos pasos**  
+> - Definir KPI semanales de tiempo en taller y tasa de demoras.  
+> - Lanzar piloto de optimización de entregas en eléctricos en tres talleres críticos.  
+> - Formar a personal postventa en gestión de expectativas y comunicación proactiva.  

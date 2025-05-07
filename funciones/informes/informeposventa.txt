@@ -1,0 +1,107 @@
+## INFORME DE EXPERIENCIA DE USUARIO DE ENERO 2025 – ABRIL 2025 EN TALLERES KIA
+
+Este informe analiza 1 504 valoraciones de servicio postventa recogidas entre el 1 de enero de 2025 y el 30 de abril de 2025, extraídas de los verbatims (opiniones textuales) de clientes de Kia. Proporciona una visión estratégica de la satisfacción por centro, modelo y tecnología, identifica áreas de riesgo y oportunidades de mejora, y aporta recomendaciones accionables. Los datos pueden estar sesgados por la voluntad de los usuarios de compartir su experiencia.
+
+---
+
+## HALLAZGOS CLAVE
+
+- **Puntuación media global:** 7,06/8 sobre 1 504 valoraciones.  
+- **Distribución por tecnología:**  
+  - **Gasolina:** 721 valoraciones (47,94 %), puntuación media 7,06.  
+  - **Híbrido:** 375 valoraciones (24,93 %), puntuación media 7,33.  
+  - **Diésel:** 328 valoraciones (21,81 %), puntuación media 6,85.  
+  - **Eléctrico:** 74 valoraciones (4,92 %), puntuación media 6,64.  
+- **Modelos más representativos:**  
+  - **Stonic YB:** 174 valoraciones (11,57 %), puntuación media 6,70.  
+  - **Sportage QL:** 133 valoraciones (8,84 %), puntuación media 6,79.  
+- **Centros con rendimiento extremadamente bajo (avg < 5):**  
+  - **Noacar Automociones S.L.** (2 valoraciones, 0,13 % del total), avg 4,00.  
+  - **TRACXIONCARS, S.A.** (6 valoraciones, 0,40 % del total), avg 4,67.  
+  > Motivos: demoras excesivas en citas (3–5 meses), repetición de visitas sin resolución, defectos de fábrica.  
+- **Centros con puntuación perfecta (avg 8,0):**  
+  - **BECO AUTOMOCIÓN, S.L.** (1 valoración, 0,07 %).  
+  - **MARA POIO, S.L.** (2 valoraciones, 0,13 %).  
+  - **2015 TXAPIME AUTOAK, S.L.** (1 valoración, 0,07 %).  
+  > Fortalezas: “satisfacción general y con el personal de atención”, trato profesional y amable.
+
+---
+
+## ÁREAS DE OPORTUNIDAD Y RIESGO
+
+- **Centros críticos (< 5):**  
+  Ambos centros representan solo el 0,53 % del total, pero su impacto reputacional es alto.  
+  - **Noacar Automociones S.L.:** defectos de fábrica, falta de seguimiento.  
+  - **TRACXIONCARS, S.A.:** citas que tardan de 3 a 5 meses, múltiples visitas sin solución.  
+- **Riesgo por tecnología:**  
+  - **Eléctrico (4,92 % del total)** con avg 6,64: quejas de autonomía real y fallos eléctricos tras pocos kilómetros.  
+  - **Diésel (21,81 %)** con avg 6,85: percepciones de consumo de aceite y filtros degradados.  
+- **Modelos por debajo de la media:**  
+  - **Stonic YB (11,57 %) – avg 6,70:** reclamaciones de fallos mecánicos tras pocos meses y repetición de citas sin éxito.  
+  - **Sportage QL (8,84 %) – avg 6,79:** sonido inusual en marcha atrás y retrasos en entrega de piezas.
+
+---
+
+## TEMPORALIDAD
+
+- **Percepción del tiempo de servicio:**  
+  - “Después de haber estado **15 días** en el taller…”  
+  - “La reparación tardó **5 meses** en completarse.”  
+  - “Más de **tres meses** para tener cita…”  
+  - Valoración: demoras de **más de 2 días** son mal percibidas; hasta 48 h suelen considerarse aceptables.  
+- **Irregularidad en recopilación de feedback:**  
+  - **TALLERES M. GALLEGO, S.L.** no registró valoraciones en diciembre 2024.  
+  - **TOLOSA MOTOR, S.A.** ausente en 4 de los 5 meses (dic ’24, feb–abr ’25), lo que dificulta el seguimiento continuo.
+
+---
+
+## TALLERES / CONCESIONARIOS
+
+### Centros con avg < 5 (ordenados de menor a mayor)
+| Taller                         | Avg Score | % del total | Mayor motivo identificado                  |
+|--------------------------------|:---------:|:-----------:|--------------------------------------------|
+| Noacar Automociones S.L.       |    4,00   |    0,13 %   | Defectos de fábrica al recibir el coche    |
+| TRACXIONCARS, S.A.             |    4,67   |    0,40 %   | Demoras de 3–5 meses en citas/servicio     |
+
+### 3 Mejores talleres (avg 8,0)
+| Taller                         | Avg Score | % del total | Fortalezas clave                           |
+|--------------------------------|:---------:|:-----------:|--------------------------------------------|
+| BECO AUTOMOCIÓN, S.L.          |    8,00   |    0,07 %   | Profesionalidad y trato personalizado      |
+| MARA POIO, S.L.                |    8,00   |    0,13 %   | “Satisfacción general” y atención ágil     |
+| 2015 TXAPIME AUTOAK, S.L.      |    8,00   |    0,07 %   | Rapidez en entrega y claridad en costes    |
+
+**Diferencias en comentarios:**  
+- **Centros bajos:** foco en **demoras** y **falta de seguimiento**.  
+- **Centros altos:** énfasis en **trato al cliente**, **eficiencia** y **comunicación clara**.
+
+---
+
+## MODELOS Y TECNOLOGÍA
+
+### Tecnología
+| Tecnología | % del total | Avg Score |
+|------------|:-----------:|:---------:|
+| Gasolina   |   47,94 %   |   7,06    |
+| Híbrido    |   24,93 %   |   7,33    |
+| Diésel     |   21,81 %   |   6,85    |
+| Eléctrico  |    4,92 %   |   6,64    |
+
+> **Riesgo:** Eléctrico y diésel por debajo de la media global, con quejas de autonomía y consumo de aceite.
+
+### Modelos con avg más bajos
+| Modelo       | % del total | Avg Score | Queja recurrente                                          |
+|--------------|:-----------:|:---------:|-----------------------------------------------------------|
+| Stonic YB    |   11,57 %   |   6,70    | Fallos mecánicos tras pocos meses; citas repetidas sin éxito |
+| Sportage QL  |    8,84 %   |   6,79    | Sonoridad inusual en marcha atrás; retrasos en piezas      |
+
+---
+
+## CONCLUSIONES
+
+1. **Optimizar tiempos de servicio** en centros críticos: acortar plazos de cita y reparación a menos de 48 h para evitar insatisfacción extrema y quejas de demoras de meses.  
+2. **Monitorear la experiencia en vehículos eléctricos y diésel**, implementando acciones de mejora de autonomía y revisión de componentes de desgaste: filtrar incidencias y comunicar avances.  
+3. **Enfocar formación en atención al cliente** replicando buenas prácticas de los mejores talleres (BECO, MARA POIO, TXAPIME): comunicación proactiva, profesionalidad y agilidad en entregas.  
+4. **Estandarizar la recolección de feedback mensual** en todos los talleres para evitar vacíos de datos y asegurar seguimiento continuo de tendencias.  
+5. **Profundizar en modelos con baja satisfacción** (Stonic YB, Sportage QL): análisis técnico de las piezas que fallan y mejora en la gestión de citas de reparación.  
+
+Estos cambios contribuirán a elevar la puntuación media por encima de 7,5 en los próximos informes, reforzando la reputación de Kia España en customer experience.

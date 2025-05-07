@@ -4,6 +4,8 @@ import markdown2
 import pdfkit
 import streamlit as st
 import os
+import boto3
+from io import BytesIO
 
 def descargar_informe(informe):
 
@@ -132,3 +134,37 @@ def descargar_informe(informe):
 
     os.unlink(html_footer_path)
     os.unlink(html_main_path)
+
+import boto3
+from io import BytesIO
+
+def descargar_informe_online(tipo_servicio):
+    s3 = boto3.client(
+        "s3",
+        aws_access_key_id=st.secrets["aws"]["access_key_id"],
+        aws_secret_access_key=st.secrets["aws"]["secret_access_key"],
+        region_name=st.secrets["aws"]["region"],
+    )
+
+    bucket = "kia-verbatims-data"
+    if tipo_servicio == "posventa":
+        nombre_archivo = "informeposventa_decargar.pdf"
+        nombre_descarga = "informe_posventa.pdf"
+    elif tipo_servicio == "venta":
+        nombre_archivo = "informeventas_decargar.pdf"
+        nombre_descarga = "informe_venta.pdf"
+    
+    key = f"informes/{nombre_archivo}"  # ejemplo: informeposventa_descargar.pdf
+
+    # Descargamos el archivo a memoria
+    buffer = BytesIO()
+    s3.download_fileobj(bucket, key, buffer)
+    buffer.seek(0)
+
+    # Botón para descargar
+    st.download_button(
+        label="📄 Descargar PDF",
+        data=buffer,
+        file_name=nombre_descarga,  # ejemplo: informe_posventa.pdf
+        mime="application/pdf"
+    )

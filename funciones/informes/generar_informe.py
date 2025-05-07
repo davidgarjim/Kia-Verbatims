@@ -1,10 +1,9 @@
 import os
 import pandas as pd
 from openai import OpenAI
-from funciones.passwords.passwords import OPENAI_API_KEY
 import tiktoken
 
-
+OPENAI_API_KEY = st.secrets["openai"]["api_key"]
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 prompt_texto_informe = """

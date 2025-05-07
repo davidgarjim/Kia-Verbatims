@@ -1,6 +1,6 @@
 import streamlit as st
 from openai import OpenAI
-from funciones.chatbot.vectorizacion import vectorizar_verbatims, buscar_verbatims
+#from funciones.chatbot.vectorizacion import vectorizar_verbatims, buscar_verbatims
 import os
 
 OPENAI_API_KEY = st.secrets["openai"]["api_key"]

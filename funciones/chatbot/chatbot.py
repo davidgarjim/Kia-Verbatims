@@ -10,8 +10,8 @@ def funcion_chatbot(df_actual, tipo_servicio):
     st.title("GPTKia: Verbatims")
 
     # Cargar índice y embeddings según el tipo de servicio
-    archivo_excel = "docs/sales_concatenado.xlsx" if tipo_servicio == "Ventas" else "docs/service_concatenado.xlsx"
-    index, df_embeddings = vectorizar_verbatims(tipo_servicio, archivo_excel)
+    #archivo_excel = "docs/sales_concatenado.xlsx" if tipo_servicio == "Ventas" else "docs/service_concatenado.xlsx"
+    #index, df_embeddings = vectorizar_verbatims(tipo_servicio, archivo_excel)
 
     # Historial de mensajes
     if "messages" not in st.session_state:
@@ -32,13 +32,13 @@ def funcion_chatbot(df_actual, tipo_servicio):
             message_placeholder = st.empty()
 
             # Buscar verbatims relevantes
-            resultados = buscar_verbatims(pregunta, index, df_embeddings, top_k=5)
+            #resultados = buscar_verbatims(pregunta, index, df_embeddings, top_k=5)
 
             # Armar texto con contexto
-            verbatims = "\n".join([
-                f"- ({row['Taller']}, {row['Modelo']}, {row['Tecnología']}, {row['Puntuación']}) {row['Comentarios']}"
-                for _, row in resultados.iterrows()
-            ])
+            #verbatims = "\n".join([
+            #    f"- ({row['Taller']}, {row['Modelo']}, {row['Tecnología']}, {row['Puntuación']}) {row['Comentarios']}"
+            #    for _, row in resultados.iterrows()
+            #])
 
             # Prompt contextual
             prompt_sistema = (
@@ -46,7 +46,7 @@ def funcion_chatbot(df_actual, tipo_servicio):
                 "Responde de forma clara, precisa y orientada a decisiones. "
                 "Utiliza exclusivamente los comentarios proporcionados como fuente. "
                 "Si no hay suficiente información para responder, indícalo claramente. Mínimo 5 respuestas.\n\n"
-                f"Comentarios relevantes:\n{verbatims}"
+                #f"Comentarios relevantes:\n{verbatims}"
             )
 
             # Recuperar las últimas 2 interacciones previas (si existen)

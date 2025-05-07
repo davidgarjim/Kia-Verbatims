@@ -46,9 +46,12 @@ def cargar_parquets_s3() -> tuple[pl.DataFrame, pl.DataFrame]:
     p_ev   = f"s3://{BUCKET}/{PREFIX}/df_eventas.parquet"
     p_posv = f"s3://{BUCKET}/{PREFIX}/df_eposventa.parquet"
 
-    # Leemos con Polars directamente desde S3
-    df_eventas   = pl.read_parquet(p_ev,   storage_options=storage_opts)
-    df_eposventa = pl.read_parquet(p_posv, storage_options=storage_opts)
+    # 1) Leer con pandas + pyarrow + s3fs
+    df_ev_pd   = pd.read_parquet(p_ev, engine="pyarrow", storage_options=storage_opts)
+    df_posv_pd = pd.read_parquet(p_posv, engine="pyarrow", storage_options=storage_opts)
+
+    # 2) Convertir a Polars
+    return pl.from_pandas(df_ev_pd), pl.from_pandas(df_posv_pd)
 
     return df_eventas, df_eposventa
 

@@ -1,5 +1,5 @@
-from funciones.limpieza.preparacion import leer_concatenar_y_preparar
-from funciones.limpieza.preparacion2 import preparar_datos2
+#from funciones.limpieza.preparacion import leer_concatenar_y_preparar
+#from funciones.limpieza.preparacion2 import preparar_datos2
 from funciones.informes.generar_informe import funcion_informe, informe
 from funciones.chatbot.chatbot import funcion_chatbot
 from funciones.informes.descargar_informe import descargar_informe
@@ -10,67 +10,69 @@ import plotly.express as px
 import plotly.graph_objects as go
 from pathlib import Path
 import polars as pl
-import streamlit as st
 
-# ——— Credenciales AWS en secrets.toml ———
-aws = st.secrets["aws"]
-BUCKET = aws["bucket"]
-PREFIX = "data/bbdd_procesado"
-storage_opts = {
-    "key": aws["access_key_id"],
-    "secret": aws["secret_access_key"],
-    "client_kwargs": {"region_name": aws["region"]}
-}
-
-# ——— Autenticación (igual que ya tienes) ———
+# — Autenticación por contraseña —
 if "authenticated" not in st.session_state:
     st.session_state.authenticated = False
+
 if not st.session_state.authenticated:
     st.title("🔐 Introduce la contraseña para acceder")
     pwd = st.text_input("Contraseña", type="password")
-    if st.button("Entrar"):
-        if pwd == st.secrets["auth"]["password"]:
-            st.session_state.authenticated = True
-            st.rerun()
-        else:
-            st.error("🔒 Contraseña incorrecta")
+    if st.button("Entrar") and pwd == st.secrets["auth"]["password"]:
+        st.session_state.authenticated = True
+        st.experimental_rerun()
+    else:
+        st.error("🔒 Contraseña incorrecta")
     st.stop()
 
-# ——— Selección de servicio ———
-st.sidebar.image('media/logo.svg', width=250)
-tipo_servicio = st.sidebar.selectbox('Tipo de Servicio', ['Ventas', 'Servicio técnico'])
-centro = 'Taller' if tipo_servicio == 'Servicio técnico' else 'Concesionario'
+# — Selector de servicio —
+tipo_servicio = st.sidebar.selectbox("Tipo de Servicio", ["Ventas", "Servicio técnico"])
+centro = "Concesionario" if tipo_servicio == "Ventas" else "Taller"
 
-# ——— Carga de Parquet desde S3 ———
+# Tus credenciales en secrets.toml
+AWS = st.secrets["aws"]
+BUCKET = AWS["bucket"]
+REGION = AWS["region"]
+storage_opts = {
+    "key":    AWS["access_key_id"],
+    "secret": AWS["secret_access_key"],
+    "client_kwargs": {"region_name": REGION}
+}
+PREFIX = "data/bbdd_procesado"
+
 @st.cache_data
-def cargar_parquets_s3():
-    p1 = f"s3://{BUCKET}/{PREFIX}/df_eventas.parquet"
-    p2 = f"s3://{BUCKET}/{PREFIX}/df_eposventa.parquet"
+def cargar_parquets_s3() -> tuple[pl.DataFrame, pl.DataFrame]:
+    p_ev   = f"s3://{BUCKET}/{PREFIX}/df_eventas.parquet"
+    p_posv = f"s3://{BUCKET}/{PREFIX}/df_eposventa.parquet"
 
-    # usa pandas para leer de S3
-    df1 = pd.read_parquet(
-        p1,
-        engine="pyarrow",
-        storage_options=storage_opts
-    )
-    df2 = pd.read_parquet(
-        p2,
-        engine="pyarrow",
-        storage_options=storage_opts
-    )
+    # Leemos con Polars directamente desde S3
+    df_eventas   = pl.read_parquet(p_ev,   storage_options=storage_opts)
+    df_eposventa = pl.read_parquet(p_posv, storage_options=storage_opts)
 
-    # conviértelos a Polars
-    return pl.from_pandas(df1), pl.from_pandas(df2)
+    return df_eventas, df_eposventa
 
+@st.cache_data
+def cargar_excels_s3() -> tuple[pd.DataFrame, pd.DataFrame]:
+    # Asumiendo que tus Excel concatenados se llaman exactamente así en el mismo prefijo:
+    path_sales   = f"s3://{BUCKET}/{PREFIX}/sales_concatenado.xlsx"
+    path_service = f"s3://{BUCKET}/{PREFIX}/service_concatenado.xlsx"
+    # pandas detecta automáticamente el motor 'openpyxl' para .xlsx y acepta storage_options
+    df_sales   = pd.read_excel(path_sales,   engine="openpyxl", storage_options=storage_opts)
+    df_service = pd.read_excel(path_service, engine="openpyxl", storage_options=storage_opts)
+    return df_sales, df_service
+
+# … luego en tu flujo principal:
 df_eventas, df_eposventa = cargar_parquets_s3()
+df_sales,  df_service = cargar_excels_s3()
 
 # ——— Asignar df_actual y df_actual2 según el servicio ———
 if tipo_servicio == 'Ventas':
-    df_actual  = df_eventas   # o tu df_session_state.df_sales si quieres ambos
+    df_actual  = df_sales   # o tu df_session_state.df_sales si quieres ambos
     df_actual2 = df_eventas
 else:
-    df_actual  = df_eposventa
+    df_actual  = df_service
     df_actual2 = df_eposventa
+
 df_sinmodif = df_actual
 
 # Desplegable para seleccionar la segmentación a mostrar
@@ -97,7 +99,7 @@ if segmentacion == 'General':
         descargar_informe(informe)
 
         st.header('Gráficos Generales:')
-        st.dataframe(df_actual)
+   
         # =================== COMENTARIOS POR FECHA =================== #
         df_semana = (
                 df_actual2

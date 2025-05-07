@@ -3,8 +3,9 @@ import numpy as np
 import pandas as pd
 import faiss
 from openai import OpenAI
-from funciones.passwords.passwords import OPENAI_API_KEY
+import streamlit as st
 
+OPENAI_API_KEY = st.secrets["openai"]["api_key"]
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 def vectorizar_verbatims(tipo_servicio, archivo_excel):

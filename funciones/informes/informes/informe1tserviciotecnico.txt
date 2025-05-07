@@ -1,0 +1,29 @@
+## INFORME DE EXPERIENCIA DE USUARIO DE ENERO 2025 EN TALLERES KIA
+
+Este informe se basa en el análisis de los verbatims (opiniones de usuarios) de Kia, específicamente en el servicio postventa realizado en enero de 2025. La información recopilada proviene directamente de las experiencias de los clientes en diversos talleres de Kia en España, lo que nos permite identificar áreas críticas para la mejora continua y la optimización de la experiencia del cliente.
+
+### HALLAZGOS CLAVE
+
+- **Problemas Eléctricos en Modelos Diesel**: Un caso destacado es el del modelo cee'd 5dr JD, donde se reportaron problemas eléctricos significativos, como baterías que se descargan sin causa aparente. Este problema persistió durante años y fue identificado finalmente como un fallo en el software de la llave. Este modelo representa el 10% de las quejas en el taller "RÍAS MOTOR 2018, S.L.".
+
+### ÁREAS DE OPORTUNIDAD Y RIESGO
+
+- **Atención a Problemas de Software en Modelos Antiguos**: El taller "RÍAS MOTOR 2018, S.L." ha mostrado deficiencias en la detección y solución de problemas eléctricos relacionados con el software en modelos diesel. Es crucial implementar un protocolo de diagnóstico más riguroso para problemas eléctricos, especialmente en modelos más antiguos que puedan tener software desactualizado.
+
+### TEMPORALIDAD
+
+- **Retrasos en la Identificación de Problemas**: Los clientes han expresado frustración por la demora en la identificación de la causa raíz de los problemas eléctricos, lo cual afecta negativamente la percepción del servicio. Es esencial mejorar los tiempos de diagnóstico para aumentar la satisfacción del cliente.
+
+### TALLERES/CONCESIONARIOS
+
+- **Evaluación de Talleres**:
+  - **Talleres con Puntuaciones Bajas**: "RÍAS MOTOR 2018, S.L." ha recibido críticas por la gestión de problemas eléctricos, con una puntuación promedio de 7. Aunque no es críticamente baja, es importante abordar estas cuestiones para evitar una caída en la satisfacción del cliente.
+  - **Mejores Prácticas**: Sería beneficioso identificar talleres con altas puntuaciones y analizar sus métodos de diagnóstico y atención al cliente para replicar estas prácticas en otros centros.
+
+### MODELOS Y TECNOLOGÍA
+
+- **Fallos por Modelo y Tecnología**: El modelo cee'd 5dr JD, con tecnología Diesel, ha mostrado vulnerabilidades en su sistema eléctrico que podrían estar presentes en otros vehículos de tecnología similar. Es vital realizar una revisión exhaustiva de estos modelos para prevenir futuras quejas.
+
+### CONCLUSIONES
+
+La revisión de los servicios postventa de enero 2025 revela una necesidad crítica de mejorar los protocolos de diagnóstico en problemas eléctricos, especialmente en modelos más antiguos con tecnología diesel. Se recomienda una actualización en la formación técnica de los empleados de los talleres y una revisión de los equipos de diagnóstico para mejorar la eficiencia y efectividad del servicio al cliente. Además, es esencial que los talleres con bajos índices de satisfacción adopten las estrategias de aquellos con altas valoraciones para garantizar una experiencia uniforme y de calidad en todos los centros de servicio Kia.

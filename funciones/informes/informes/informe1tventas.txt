@@ -1,0 +1,95 @@
+### INFORME KIA ESPAÑA CUSTOMER EXPERIENCE – ANÁLISIS DE VERBATIMS DE VENTAS
+
+**Periodo analizado:** Enero a Marzo de 2025  
+**Tipo de servicio:** Experiencia de cliente en proceso de compra de vehículos nuevos en concesionarios KIA.  
+**Origen de datos:** Valoraciones y comentarios de clientes tras la adquisición de vehículos nuevos.
+
+---
+
+### HALLAZGOS CLAVE
+
+- **Baja satisfacción en varios concesionarios clave:** Talleres como *MOBILIFY ALJARAFE, S.L.*, *FERMA MOVIL, S.L.* y *ASTURIANA DE CONCESIONARIOS, S.A.* presentan puntuaciones medias extremadamente bajas (1,0 a 2,0 sobre 10). Comentarios frecuentes: **"retrasos prolongados en la entrega"**, **"falta de respuesta del concesionario"** y **"problemas mecánicos inmediatos tras la compra"**.
+  
+- **Tiempos de espera como factor crítico:** Más del 60% de las valoraciones negativas (≤4) hacen mención explícita a **retrasos en la entrega del coche**, en algunos casos superiores a 3 semanas.
+
+- **Mejores valoraciones ligadas a atención personalizada:** Los 3 mejores concesionarios (todos con puntuación media de 8,0) reciben elogios por **trato cercano**, **cumplimiento de fechas prometidas** y **transparencia en la información del coche**.
+
+---
+
+### ÁREAS DE OPORTUNIDAD Y RIESGO
+
+#### Concesionarios con puntuaciones críticas (media < 5):
+| Concesionario                        | Media | Nº Valoraciones |
+|-------------------------------------|-------|-----------------|
+| MOBILIFY ALJARAFE, S.L.            | 1,0   | 2               |
+| FERMA MOVIL, S.L.                  | 1,5   | 2               |
+| ASTURIANA DE CONCESIONARIOS, S.A.  | 2,0   | 2               |
+| MOBILITY CARS ANDALUCÍA, S.L.      | 2,0   | 1               |
+| TALENTO MOTOR, S.L.                | 2,75  | 4               |
+| MAS MOTOR, S.A.                    | 4,5   | 4               |
+
+**Motivos frecuentes en comentarios negativos:**
+- “Llevo más de tres semanas esperando que mi coche esté listo.”  
+- “El coche ha dado fallos en la caja de cambios a los pocos días.”  
+- “No me informaron de los extras correctamente.”  
+
+Estos fallos afectan directamente la **confianza del cliente**, y suponen un riesgo a la **reputación de marca** en sus regiones.
+
+---
+
+### TEMPORALIDAD
+
+#### Análisis de tiempos de espera según los comentarios:
+- **Negativa (>10 días):** “Más de 3 semanas para entregar el coche”, “1 semana funcionando, y más de 8 días en el taller ya”.
+- **Aceptable (5-10 días):** “Tardaron unos días, pero dentro de lo normal”.
+- **Excelente (<5 días):** “En dos días ya lo tenía listo”, “Cumplieron la fecha exacta que prometieron”.
+
+#### Gaps temporales en recogida de feedback:
+No se detectan cortes significativos en la recolección de valoraciones a lo largo de enero a marzo. Sin embargo, algunos centros no tienen registros en febrero, como *ASTURIANA DE CONCESIONARIOS, S.A.* o *MOBILITY CARS ANDALUCÍA, S.L.*, lo cual puede indicar falta de sistematización en la recogida.
+
+---
+
+### CONCESIONARIOS
+
+#### Concesionarios con peor puntuación:
+1. **MOBILIFY ALJARAFE, S.L. (1,0):** Críticas por largos tiempos de espera y escasa comunicación postventa.
+2. **FERMA MOVIL, S.L. (1,5):** Fallos técnicos del vehículo en primeras semanas.
+3. **ASTURIANA DE CONCESIONARIOS, S.A. (2,0):** Fallos de entrega, falta de seguimiento.
+
+#### Concesionarios con mejor puntuación:
+1. **AKI MADRID AUTOMOCIÓN, S.L. (8,0):** Comentarios sobre “trato excelente del comercial”, “rapidez en la entrega” y “atención constante”.
+2. **MOBILIFY SEVILLA 2024, S.L. (8,0):** Buenas valoraciones por transparencia.
+3. **AKI MADRID AUTOMOCIÓN (otra sucursal) (8,0):** Clientes destacan “asesoría impecable”.
+
+#### Diferencias clave en los comentarios:
+- **Centros con baja puntuación:** se repiten menciones a **falta de comunicación, retrasos, errores en extras o configuración**.
+- **Centros con alta puntuación:** los clientes destacan la **proactividad, claridad en fechas y cumplimiento de lo prometido**.
+
+---
+
+### MODELOS Y TECNOLOGÍA
+
+#### Modelos con incidencias más frecuentes:
+- **EV3(SV) (Eléctrico):** Presenta varias quejas en diferentes concesionarios por **fallos postventa y demoras**. Aparece en valoraciones de 1 a 4 en *MAS MOTOR, TALENTO MOTOR y VALGAUTO MOTOR*.
+- **Niro HEV SG2 (Híbrido):** Quejas sobre **fallos mecánicos iniciales** (“fallos en la caja de cambios”) y **retrasos de entrega**.
+
+#### Por tipo de tecnología:
+- **Eléctricos:** Mayor volumen de incidencias postventa y retrasos.
+- **Híbridos:** Problemas mecánicos tempranos en algunos modelos (Niro).
+- **Carburante:** Comentarios más neutros, menos menciones a problemas técnicos.
+
+---
+
+### CONCLUSIONES
+
+- La experiencia de cliente en ventas está gravemente afectada en varios concesionarios con **puntuaciones por debajo de 5**, donde el problema más crítico es el **incumplimiento de plazos de entrega**.
+- Modelos como **EV3(SV)** y **Niro HEV SG2** requieren especial seguimiento, al ser foco de insatisfacción y menciones a problemas técnicos iniciales.
+- La experiencia positiva está fuertemente ligada a una **buena atención comercial, comunicación constante y transparencia**, aspectos que destacan en los concesionarios con mejor puntuación.
+- Es clave trabajar en la **homogeneización de la experiencia de cliente entre centros**, e instaurar mecanismos de control sobre tiempos de entrega, revisión previa y seguimiento del vehículo postventa.
+
+**Para próximos informes** se recomienda:
+- Incorporar KPIs de cumplimiento de plazos reales vs prometidos.
+- Analizar evolución de comentarios post compra a 30 días.
+- Cruzar experiencia de ventas con postventa cuando esté disponible.
+
+---

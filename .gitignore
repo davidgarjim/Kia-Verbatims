@@ -1,0 +1,16 @@
+# Ignorar carpetas completas
+pruebas/
+funciones/passwords/
+data/
+
+# Ignorar datos
+*.xlsx
+*.csv
+*.parquet
+
+# Ignorar cosas de Streamlit / entorno
+.env
+secrets.toml
+.streamlit/
+__pycache__/
+.venv/

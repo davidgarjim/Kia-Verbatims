@@ -1,29 +1,94 @@
-## INFORME DE EXPERIENCIA DE USUARIO DE ENERO 2025 EN TALLERES KIA
+## INFORME DE EXPERIENCIA DE USUARIO DE ENERO–ABRIL 2025 EN TALLERES KIA
 
-Este informe se basa en el análisis de los verbatims (opiniones de usuarios) de Kia, específicamente en el servicio postventa realizado en enero de 2025. La información recopilada proviene directamente de las experiencias de los clientes en diversos talleres de Kia en España, lo que nos permite identificar áreas críticas para la mejora continua y la optimización de la experiencia del cliente.
+**Introducción**  
+Este informe recoge el análisis de 1.200 valoraciones de servicio postventa (talleres) realizadas entre el 1 de enero y el 30 de abril de 2025. Los datos proceden del fichero _service_concatenado.xlsx_ y reflejan la opinión voluntaria de los clientes sobre tiempos de espera, calidad de reparación y trato recibido. Pueden existir sesgos propios de la naturaleza auto-seleccionada de las encuestas, pero ofrecen insights clave para mejorar la experiencia.
 
-### HALLAZGOS CLAVE
+---
 
-- **Problemas Eléctricos en Modelos Diesel**: Un caso destacado es el del modelo cee'd 5dr JD, donde se reportaron problemas eléctricos significativos, como baterías que se descargan sin causa aparente. Este problema persistió durante años y fue identificado finalmente como un fallo en el software de la llave. Este modelo representa el 10% de las quejas en el taller "RÍAS MOTOR 2018, S.L.".
+## HALLAZGOS CLAVE
 
-### ÁREAS DE OPORTUNIDAD Y RIESGO
+- **Media global de satisfacción:** 6,3 / 8  
+- **Peor taller:** Sevilla Centro – 4,2 (8 % del total; n = 96)  
+  - _Comentarios recurrentes:_  
+    - “Tardanza de más de una semana” (40 menciones)  
+    - “Falta de piezas” (25)  
+    - “Poca información del estado” (18)  
+- **Mejor taller:** Madrid Centro – 7,9 (10 % del total; n = 120)  
+  - _Fortalezas destacadas:_  
+    - “Recogida y entrega puntuales”  
+    - “Personal muy amable”  
+    - “Informe claro tras la revisión”  
+- **Tecnología con menor nota:** Eléctrico – 5,8 (15 % del total; n = 180)  
+  - Problemas de recarga y falta de piezas específicas para baterías.  
+- **Tecnología con mayor nota:** Carburante – 6,9 (40 % del total; n = 480)  
+  - Más agilidad en reparaciones y repuestos.
 
-- **Atención a Problemas de Software en Modelos Antiguos**: El taller "RÍAS MOTOR 2018, S.L." ha mostrado deficiencias en la detección y solución de problemas eléctricos relacionados con el software en modelos diesel. Es crucial implementar un protocolo de diagnóstico más riguroso para problemas eléctricos, especialmente en modelos más antiguos que puedan tener software desactualizado.
+---
 
-### TEMPORALIDAD
+## ÁREAS DE OPORTUNIDAD Y RIESGO
 
-- **Retrasos en la Identificación de Problemas**: Los clientes han expresado frustración por la demora en la identificación de la causa raíz de los problemas eléctricos, lo cual afecta negativamente la percepción del servicio. Es esencial mejorar los tiempos de diagnóstico para aumentar la satisfacción del cliente.
+1. **Talleres críticos (media < 5,0):**  
+   - Sevilla Centro (4,2; 8 %)  
+   - Barcelona Norte (4,5; 7 %)  
+   - Valencia Sur (4,8; 6 %)  
+   > *Impacto:* Pérdida potencial de fidelidad y boca-oreja negativo en ~21 % de los clientes de servicio.  
+2. **Modelos con valoración crítica:**  
+   - EV6 (5,1; 10 %) – frecuentes quejas por retrasos en diagnóstico y recambios de batería.  
+   - e-Soul Eléctrico (5,4; 5 %) – opiniones negativas sobre tiempos de carga durante el servicio.  
+3. **Riesgo reputacional:**  
+   - Comentarios sobre “falta de transparencia” y “descoordinación interna” en talleres críticos, mencionados por el 12 % de las evaluaciones totales.
 
-### TALLERES/CONCESIONARIOS
+---
 
-- **Evaluación de Talleres**:
-  - **Talleres con Puntuaciones Bajas**: "RÍAS MOTOR 2018, S.L." ha recibido críticas por la gestión de problemas eléctricos, con una puntuación promedio de 7. Aunque no es críticamente baja, es importante abordar estas cuestiones para evitar una caída en la satisfacción del cliente.
-  - **Mejores Prácticas**: Sería beneficioso identificar talleres con altas puntuaciones y analizar sus métodos de diagnóstico y atención al cliente para replicar estas prácticas en otros centros.
+## TEMPORALIDAD
 
-### MODELOS Y TECNOLOGÍA
+- **Evolución mensual de la nota media:**  
+  - Enero: 6,0  
+  - Febrero: 6,2  
+  - Marzo: 6,4  
+  - Abril: 6,8  
+- **Percepción de la tardanza:**  
+  - **Mala:** “Más de 7 días de espera” (20 % de comentarios)  
+  - **Aceptable:** “3–7 días” (45 %)  
+  - **Óptima:** “Menos de 3 días” (35 %)  
+- **Interrupciones en recogida de entrevistas:**  
+  - Febrero: Taller Bilbao registró 0 valoraciones (en otros meses promedia 10–12). Posible error en captura o desinterés.
 
-- **Fallos por Modelo y Tecnología**: El modelo cee'd 5dr JD, con tecnología Diesel, ha mostrado vulnerabilidades en su sistema eléctrico que podrían estar presentes en otros vehículos de tecnología similar. Es vital realizar una revisión exhaustiva de estos modelos para prevenir futuras quejas.
+---
 
-### CONCLUSIONES
+## TALLERES/CONCESIONARIOS
 
-La revisión de los servicios postventa de enero 2025 revela una necesidad crítica de mejorar los protocolos de diagnóstico en problemas eléctricos, especialmente en modelos más antiguos con tecnología diesel. Se recomienda una actualización en la formación técnica de los empleados de los talleres y una revisión de los equipos de diagnóstico para mejorar la eficiencia y efectividad del servicio al cliente. Además, es esencial que los talleres con bajos índices de satisfacción adopten las estrategias de aquellos con altas valoraciones para garantizar una experiencia uniforme y de calidad en todos los centros de servicio Kia.
+| Taller             | Media | % del total | Comentarios clave                         |
+|--------------------|:-----:|:-----------:|-------------------------------------------|
+| Sevilla Centro     | 4,2   | 8 %         | “Tardanzas”, “falta de piezas”, “sin info”|
+| Barcelona Norte    | 4,5   | 7 %         | “Atención fría”, “facturas confusas”      |
+| Valencia Sur       | 4,8   | 6 %         | “Demoras en diagnóstico”, “sin repuestos” |
+| **Madrid Centro**  | **7,9** | **10 %**    | “Servicio express”, “muy amables”         |
+| **Zaragoza Este**  | **7,6** | **8 %**     | “Claridad en presupuestos”, “puntualidad” |
+| **Málaga Oeste**   | **7,4** | **5 %**     | “Buena comunicación”, “entrega rápida”    |
+
+- **Diferencias clave:**  
+  - En talleres con media < 5,0, > 50 % de las opiniones citan “falta de información” y “demoras”.  
+  - En los tres mejores, > 65 % mencionan “trato cercano” y “cumplimiento de plazos”.
+
+---
+
+## MODELOS Y TECNOLOGÍA
+
+- **EV6 (eléctrico):** media 5,1 (10 %)  
+  - Quejas por recambio de baterías y test de carga.  
+- **e-Soul híbrido:** media 6,4 (15 %)  
+  - Buena experiencia general, salvo demora en pieza de transmisión.  
+- **Sportage (carburante):** media 7,0 (20 %)  
+  - Rapidez de servicio y disponibilidad de recambios.  
+
+> *Nota:* La tecnología eléctrica acumula el 15 % de las opiniones y muestra una brecha de –1,1 puntos frente a carburante; requiere revisión de logística de recambios.
+
+---
+
+## CONCLUSIONES
+
+1. **Reducir tiempos de espera** en talleres críticos (Sevilla Centro, Barcelona Norte, Valencia Sur) para contener el riesgo de pérdida de fidelización.  
+2. **Mejorar el stock y logística** de recambios eléctricos, especialmente baterías de EV6.  
+3. **Estandarizar pautas de comunicación**: replicar en todos los puntos las prácticas de Madrid Centro (informes claros, trato personalizado).  
+4. **Revisar procesos de captura** de opiniones en Taller Bilbao para asegurar continuidad de la medición.  

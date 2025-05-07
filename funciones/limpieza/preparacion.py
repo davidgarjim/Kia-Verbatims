@@ -104,4 +104,9 @@ def leer_concatenar_y_preparar() -> tuple[pd.DataFrame, pd.DataFrame]:
 
     return df_sales_concatenado, df_service_concatenado
 
-df_sales, df_service = leer_concatenar_y_preparar()
+if __name__ == "__main__":
+    # Llama a tu función y muestra algo para comprobar
+    df_sales, df_service = leer_concatenar_y_preparar()
+    print("Sales:", df_sales.shape)
+    print("Service:", df_service.shape)
+

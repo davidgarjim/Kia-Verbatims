@@ -364,7 +364,7 @@ def preparar_datos2():
 
 
     # Cargar el archivo de correspondencia modelo → tecnología
-    df_tecnologia = pd.read_excel(r"C:\Users\david\Documents\PROYECTOS\KIA\VERBATIMS\src\limpieza\nombres_columnas.xlsx", sheet_name="Tecnología")
+    df_tecnologia = pd.read_excel(r"funciones\limpieza\ips\nombres_columnas.xlsx", sheet_name="Tecnología")
 
     # Convertir a Polars y normalizar nombres
     df_tecnologia_pl = pl.DataFrame(df_tecnologia).rename({
@@ -459,11 +459,11 @@ def preparar_datos2():
 
     # Cargar las hojas de mapeo
     df_ventas_mapping = pd.read_excel(
-        r"C:\Users\david\Documents\PROYECTOS\KIA\VERBATIMS\src\limpieza\nombres_columnas.xlsx",
+        r"funciones\limpieza\ips\nombres_columnas.xlsx",
         sheet_name="Ventas"
     )
     df_posventa_mapping = pd.read_excel(
-        r"C:\Users\david\Documents\PROYECTOS\KIA\VERBATIMS\src\limpieza\nombres_columnas.xlsx",
+        r"funciones\limpieza\ips\nombres_columnas.xlsx",
         sheet_name="Posventa"
     )
 

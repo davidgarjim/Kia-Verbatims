@@ -147,14 +147,14 @@ def descargar_informe_online(tipo_servicio):
     )
 
     bucket = "kia-verbatims-data"
-    if tipo_servicio == "posventa":
+    if tipo_servicio == "Servicio técnico":
         nombre_archivo = "informeposventa_decargar.pdf"
         nombre_descarga = "informe_posventa.pdf"
-    elif tipo_servicio == "venta":
+    elif tipo_servicio == "Ventas":
         nombre_archivo = "informeventas_decargar.pdf"
         nombre_descarga = "informe_venta.pdf"
     
-    key = f"informes/{nombre_archivo}"  # ejemplo: informeposventa_descargar.pdf
+    key = f"informes/{nombre_archivo}"  #
 
     # Descargamos el archivo a memoria
     buffer = BytesIO()

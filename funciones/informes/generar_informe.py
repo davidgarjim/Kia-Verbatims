@@ -245,7 +245,7 @@ if __name__ == "__main__":
 
 
 
-def print_informe(tipo_servicio: str) -> str:
+def print_informe(tipo_servicio):
     s3 = boto3.client(
         "s3",
         aws_access_key_id=st.secrets["aws"]["access_key_id"],

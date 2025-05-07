@@ -3,6 +3,7 @@
 from funciones.informes.generar_informe import print_informe
 from funciones.chatbot.chatbot import funcion_chatbot
 #from funciones.informes.descargar_informe import descargar_informe
+from funciones.informes.descargar_informe import descargar_informe_online
 import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
@@ -10,7 +11,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 from pathlib import Path
 import polars as pl
-import s3fs
+import boto3
 
 # — Autenticación por contraseña —
 if "authenticated" not in st.session_state:
@@ -28,6 +29,8 @@ if not st.session_state.authenticated:
      st.stop()
 
 # — Selector de servicio —
+st.sidebar.image('media/logo.svg', width=250)
+st.sidebar.title('Selecciona el servicio:')
 tipo_servicio = st.sidebar.selectbox("Tipo de Servicio", ["Ventas", "Servicio técnico"])
 centro = "Concesionario" if tipo_servicio == "Ventas" else "Taller"
 
@@ -102,6 +105,7 @@ if segmentacion == 'General':
         st.markdown(informe)
 
         #descargar_informe(informe)
+        descargar_informe_online(tipo_servicio)
 
         st.header('Gráficos Generales:')
    
@@ -328,6 +332,12 @@ if segmentacion == 'General':
             ].copy()
 
             df_filtrado['Puntuación'] = pd.to_numeric(df_filtrado['Puntuación'], errors='coerce')
+
+            df_filtrado = df_filtrado[
+                (df_filtrado['Puntuación'] <= 5) &
+                (df_filtrado['Comentarios'].astype(str).apply(lambda x: len(x.split()) > 3))
+            ].sort_values(by='Puntuación', ascending=True)
+
             df_filtrado = df_filtrado.sort_values(by='Puntuación', ascending=True).reset_index(drop=True)
 
             st.write(f"Comentarios **negativos** para tecnología: **{tecnologia_seleccionada}**")

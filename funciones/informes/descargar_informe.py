@@ -153,7 +153,7 @@ def descargar_informe_online(tipo_servicio):
         nombre_descarga = "informe_posventa.pdf"
     elif tipo_servicio == "Ventas":
         nombre_archivo = "informeventas_decargar.pdf"
-        nombre_descarga = "informe_venta.pdf"
+        nombre_descarga = "informeventas_decargar.pdf"
     else:
         st.error("Tipo de servicio no reconocido.")
         return

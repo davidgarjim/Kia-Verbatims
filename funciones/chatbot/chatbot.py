@@ -1,9 +1,9 @@
-from funciones.passwords.passwords import OPENAI_API_KEY
 import streamlit as st
 from openai import OpenAI
 from funciones.chatbot.vectorizacion import vectorizar_verbatims, buscar_verbatims
 import os
 
+OPENAI_API_KEY = st.secrets["openai"]["api_key"]
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 def funcion_chatbot(df_actual, tipo_servicio):

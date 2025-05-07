@@ -2,6 +2,7 @@ import os
 import pandas as pd
 from openai import OpenAI
 import tiktoken
+import streamlit as st
 
 OPENAI_API_KEY = st.secrets["openai"]["api_key"]
 client = OpenAI(api_key=OPENAI_API_KEY)

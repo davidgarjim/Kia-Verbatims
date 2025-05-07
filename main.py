@@ -103,10 +103,9 @@ if segmentacion == 'General':
     if gen_todo:
         #with st.expander("Ver Conclusiones Generales"):
         informe = print_informe(tipo_servicio)
-    if informe:
-        st.markdown(informe)
-    else:
-        st.warning("⚠️ No se pudo cargar el informe.")
+        if informe:
+            st.markdown(informe)
+    
 
         #descargar_informe(informe)
         descargar_informe_online(tipo_servicio)

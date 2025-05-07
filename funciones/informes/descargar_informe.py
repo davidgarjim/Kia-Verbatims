@@ -147,24 +147,27 @@ def descargar_informe_online(tipo_servicio):
     )
 
     bucket = "kia-verbatims-data"
+    
     if tipo_servicio == "Servicio técnico":
         nombre_archivo = "informeposventa_decargar.pdf"
         nombre_descarga = "informe_posventa.pdf"
     elif tipo_servicio == "Ventas":
         nombre_archivo = "informeventas_decargar.pdf"
         nombre_descarga = "informe_venta.pdf"
+    else:
+        st.error("Tipo de servicio no reconocido.")
+        return
     
-    key = f"informes/{nombre_archivo}"  #
+    key = f"informes/{nombre_archivo}"
 
     # Descargamos el archivo a memoria
     buffer = BytesIO()
     s3.download_fileobj(bucket, key, buffer)
     buffer.seek(0)
 
-    # Botón para descargar
     st.download_button(
         label="📄 Descargar PDF",
         data=buffer,
-        file_name=nombre_descarga,  # ejemplo: informe_posventa.pdf
+        file_name=nombre_descarga,
         mime="application/pdf"
     )

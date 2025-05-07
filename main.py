@@ -46,9 +46,21 @@ centro = 'Taller' if tipo_servicio == 'Servicio técnico' else 'Concesionario'
 def cargar_parquets_s3():
     p1 = f"s3://{BUCKET}/{PREFIX}/df_eventas.parquet"
     p2 = f"s3://{BUCKET}/{PREFIX}/df_eposventa.parquet"
-    df_e = pl.read_parquet(p1, storage_options=storage_opts)
-    df_p = pl.read_parquet(p2, storage_options=storage_opts)
-    return df_e, df_p
+
+    # usa pandas para leer de S3
+    df1 = pd.read_parquet(
+        p1,
+        engine="pyarrow",
+        storage_options=storage_opts
+    )
+    df2 = pd.read_parquet(
+        p2,
+        engine="pyarrow",
+        storage_options=storage_opts
+    )
+
+    # conviértelos a Polars
+    return pl.from_pandas(df1), pl.from_pandas(df2)
 
 df_eventas, df_eposventa = cargar_parquets_s3()
 

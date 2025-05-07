@@ -1,8 +1,8 @@
 #from funciones.limpieza.preparacion import leer_concatenar_y_preparar
 #from funciones.limpieza.preparacion2 import preparar_datos2
-from funciones.informes.generar_informe import funcion_informe, informe
+#from funciones.informes.generar_informe import funcion_informe, informe
 from funciones.chatbot.chatbot import funcion_chatbot
-from funciones.informes.descargar_informe import descargar_informe
+#from funciones.informes.descargar_informe import descargar_informe
 import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt

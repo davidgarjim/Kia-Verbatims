@@ -246,18 +246,33 @@ if __name__ == "__main__":
 
 
 def print_informe(tipo_servicio):
-    s3 = boto3.client(
-        "s3",
-        aws_access_key_id=st.secrets["aws"]["access_key_id"],
-        aws_secret_access_key=st.secrets["aws"]["secret_access_key"],
-        region_name=st.secrets["aws"]["region"],
-    )
+    try:
+        s3 = boto3.client(
+            "s3",
+            aws_access_key_id=st.secrets["aws"]["access_key_id"],
+            aws_secret_access_key=st.secrets["aws"]["secret_access_key"],
+            region_name=st.secrets["aws"]["region"],
+        )
 
-    bucket = "kia-verbatims-data"
-    if tipo_servicio == "Ventas":
-        key = "informes/informeventas.txt"
-    elif tipo_servicio == "Servicio técnico":
-        key = "informes/informeposventa.txt"
-    else:
-        st.error("❌ Tipo de servicio no reconocido.")
+        bucket = "kia-verbatims-data"
+        
+        if tipo_servicio == "Ventas":
+            key = "informes/informeventas.txt"
+        elif tipo_servicio == "Servicio técnico":
+            key = "informes/informeposventa.txt"
+        else:
+            st.error("❌ Tipo de servicio no reconocido.")
+            return ""
+
+        response = s3.get_object(Bucket=bucket, Key=key)
+        contenido = response['Body'].read().decode('utf-8')
+
+        return contenido
+    
+    except ClientError as e:
+        st.error(f"🚫 Error al acceder al archivo S3: {e}")
+        return ""
+
+    except Exception as e:
+        st.error(f"⚠️ Error inesperado: {e}")
         return ""

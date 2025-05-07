@@ -13,6 +13,7 @@ from pathlib import Path
 import polars as pl
 import boto3
 
+
 # — Autenticación por contraseña —
 if "authenticated" not in st.session_state:
     st.session_state.authenticated = False
@@ -102,7 +103,10 @@ if segmentacion == 'General':
     if gen_todo:
         #with st.expander("Ver Conclusiones Generales"):
         informe = print_informe(tipo_servicio)
+    if informe:
         st.markdown(informe)
+    else:
+        st.warning("⚠️ No se pudo cargar el informe.")
 
         #descargar_informe(informe)
         descargar_informe_online(tipo_servicio)

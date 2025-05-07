@@ -26,7 +26,7 @@ def preparar_datos2():
         return df_pl.rename(columnas_renombradas)
 
     # --- Rutas y preparación ---
-    ruta_base = Path(r"C:\Users\david\Documents\PROYECTOS\KIA\VERBATIMS\data\bbdd_bruto")
+    ruta_base = Path(r"data\bbdd_bruto")
     archivos_xls = list(ruta_base.rglob("*.xls"))
 
     ventas_lista = []
@@ -364,7 +364,7 @@ def preparar_datos2():
 
 
     # Cargar el archivo de correspondencia modelo → tecnología
-    df_tecnologia = pd.read_excel(r"funciones\limpieza\ips\nombres_columnas.xlsx", sheet_name="Tecnología")
+    df_tecnologia = pd.read_excel(r"ips\nombres_columnas.xlsx", sheet_name="Tecnología")
 
     # Convertir a Polars y normalizar nombres
     df_tecnologia_pl = pl.DataFrame(df_tecnologia).rename({
@@ -459,11 +459,11 @@ def preparar_datos2():
 
     # Cargar las hojas de mapeo
     df_ventas_mapping = pd.read_excel(
-        r"funciones\limpieza\ips\nombres_columnas.xlsx",
+        r"\ips\nombres_columnas.xlsx",
         sheet_name="Ventas"
     )
     df_posventa_mapping = pd.read_excel(
-        r"funciones\limpieza\ips\nombres_columnas.xlsx",
+        r"\ips\nombres_columnas.xlsx",
         sheet_name="Posventa"
     )
 
@@ -565,10 +565,9 @@ def preparar_datos2():
     df_eventas, df_eposventa = geoip(df_eventas, df_eposventa)
 
     # 1) Carga tu Excel de rentas:
-    renta_pd = pd.read_excel(
-        r"src/limpieza/ips/renta.xlsx",
-        dtype={"codigo_postal": str}   # asegúrate de que el CP sea string
-    )
+    renta_path = Path(__file__).parent / "ips" / "renta.xlsx"
+    renta_pd = pd.read_excel(renta_path, dtype={"codigo_postal": str})
+
 
     # 2) Pásalo a Polars y normaliza nombres:
     renta_pl = pl.DataFrame(renta_pd).rename({
@@ -590,7 +589,7 @@ def preparar_datos2():
 
 
     # --- Guardar resultados ---
-    output_dir = Path(r"C:\Users\david\Documents\PROYECTOS\KIA\VERBATIMS\data\bbdd_procesado")
+    output_dir = Path(r"data\bbdd_procesado")
     output_dir.mkdir(parents=True, exist_ok=True)
 
     df_eventas.write_parquet(output_dir / "df_eventas.parquet")
@@ -598,14 +597,6 @@ def preparar_datos2():
 
     return df_eventas, df_eposventa
 
-
-
 if __name__ == "__main__":
-    # Llamada CORRECTA: sin pasar argumentos
-    df_eventas, df_eposventa = preparar_datos()
-
-    # Ahora sí puedes imprimir sus columnas
-    print("Columnas en df_eventas:", df_eventas.columns)
-    print("Columnas en df_eposventa:", df_eposventa.columns)
-
-
+    # Llamamos a la versión 2 de tu preparación
+    df_eventas, df_eposventa = preparar_datos2()

@@ -16,14 +16,15 @@ if "authenticated" not in st.session_state:
     st.session_state.authenticated = False
 
 if not st.session_state.authenticated:
-    st.title("🔐 Introduce la contraseña para acceder")
-    pwd = st.text_input("Contraseña", type="password")
-    if st.button("Entrar") and pwd == st.secrets["auth"]["password"]:
-        st.session_state.authenticated = True
-        st.experimental_rerun()
-    else:
-        st.error("🔒 Contraseña incorrecta")
-    st.stop()
+     st.title("🔐 Introduce la contraseña para acceder")
+     pwd = st.text_input("Contraseña", type="password")
+     
+     if st.button("Entrar"):
+            if pwd == st.secrets["auth"]["password"]:
+                st.session_state.authenticated = True
+            else:
+                st.error("🔒 Contraseña incorrecta")
+     st.stop()
 
 # — Selector de servicio —
 tipo_servicio = st.sidebar.selectbox("Tipo de Servicio", ["Ventas", "Servicio técnico"])

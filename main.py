@@ -10,69 +10,55 @@ import plotly.express as px
 import plotly.graph_objects as go
 from pathlib import Path
 import polars as pl
-
 import streamlit as st
 
-# Inicializa el flag de autenticación
+# ——— Credenciales AWS en secrets.toml ———
+aws = st.secrets["aws"]
+BUCKET = aws["bucket"]
+PREFIX = "data/bbdd_procesado"
+storage_opts = {
+    "key": aws["access_key_id"],
+    "secret": aws["secret_access_key"],
+    "client_kwargs": {"region_name": aws["region"]}
+}
+
+# ——— Autenticación (igual que ya tienes) ———
 if "authenticated" not in st.session_state:
     st.session_state.authenticated = False
-
-# Si no está autenticado, pide sólo la contraseña
 if not st.session_state.authenticated:
     st.title("🔐 Introduce la contraseña para acceder")
     pwd = st.text_input("Contraseña", type="password")
     if st.button("Entrar"):
         if pwd == st.secrets["auth"]["password"]:
             st.session_state.authenticated = True
-            st.rerun()   # recarga la app ya autenticado
+            st.rerun()
         else:
             st.error("🔒 Contraseña incorrecta")
-    st.stop()  # detiene el resto de la app hasta que se autentique
+    st.stop()
 
-# —— A partir de aquí, el usuario ya está autenticado ——
-
-# ================== SELECCIÓN DE GRÁFICOS EN LA BARRA LATERAL ================== #
+# ——— Selección de servicio ———
 st.sidebar.image('media/logo.svg', width=250)
-st.sidebar.title('Selecciona el servicio:')
-
-# Selectbox para elegir tipo de servicio
 tipo_servicio = st.sidebar.selectbox('Tipo de Servicio', ['Ventas', 'Servicio técnico'])
-
 centro = 'Taller' if tipo_servicio == 'Servicio técnico' else 'Concesionario'
-# ================== CONTROL DE CARGA DE DATAFRAME ================== #
 
-# Inicializar estado si no existe
-if "tipo_servicio_anterior" not in st.session_state:
-    st.session_state.tipo_servicio_anterior = None
-if "df_sales" not in st.session_state or "df_service" not in st.session_state or tipo_servicio != st.session_state.tipo_servicio_anterior:
-    # Solo se ejecuta si no están en memoria o si ha cambiado el valor del selectbox
-    st.session_state.df_sales, st.session_state.df_service = leer_concatenar_y_preparar()
-    st.session_state.tipo_servicio_anterior = tipo_servicio
-# Rutas a tus parquet
-PARQUET_DIR = Path(r"data/bbdd_procesado")
-PATH_EVENTAS = PARQUET_DIR / "df_eventas.parquet"
-PATH_EPOSVENTA = PARQUET_DIR / "df_eposventa.parquet"
+# ——— Carga de Parquet desde S3 ———
+@st.cache_data
+def cargar_parquets_s3():
+    p1 = f"s3://{BUCKET}/{PREFIX}/df_eventas.parquet"
+    p2 = f"s3://{BUCKET}/{PREFIX}/df_eposventa.parquet"
+    df_e = pl.read_parquet(p1, storage_options=storage_opts)
+    df_p = pl.read_parquet(p2, storage_options=storage_opts)
+    return df_e, df_p
 
-# Si faltan los Parquet, generarlos
-if not PATH_EVENTAS.exists() or not PATH_EPOSVENTA.exists():
-    st.sidebar.warning("Parquet no encontrados: ejecutando preparar_datos() para regenerarlos...")
-    preparar_datos2()  # Debe crear ambos .parquet en PARQUET_DIR
+df_eventas, df_eposventa = cargar_parquets_s3()
 
-# Carga segura en session_state
-if ('df_eventas' not in st.session_state) or ('df_eposventa' not in st.session_state):
-    st.session_state.df_eventas   = pl.read_parquet(PATH_EVENTAS)
-    st.session_state.df_eposventa = pl.read_parquet(PATH_EPOSVENTA)
-    st.session_state.tipo_servicio_anterior = None
-
-
-# ================== ASIGNAR DATAFRAME ACTUAL ================== #
+# ——— Asignar df_actual y df_actual2 según el servicio ———
 if tipo_servicio == 'Ventas':
-    df_actual = st.session_state.df_sales
-    df_actual2 = st.session_state.df_eventas
+    df_actual  = df_eventas   # o tu df_session_state.df_sales si quieres ambos
+    df_actual2 = df_eventas
 else:
-    df_actual = st.session_state.df_service
-    df_actual2 = st.session_state.df_eposventa
-
+    df_actual  = df_eposventa
+    df_actual2 = df_eposventa
 df_sinmodif = df_actual
 
 # Desplegable para seleccionar la segmentación a mostrar

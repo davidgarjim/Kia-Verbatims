@@ -135,10 +135,9 @@ def descargar_informe(informe):
     os.unlink(html_footer_path)
     os.unlink(html_main_path)
 
-import boto3
-from io import BytesIO
 
-def descargar_informe_online(tipo_servicio):
+def descargar_informe_online(tipo_servicio: str):
+    # Configurar cliente de S3 con las credenciales de Streamlit
     s3 = boto3.client(
         "s3",
         aws_access_key_id=st.secrets["aws"]["access_key_id"],
@@ -147,27 +146,30 @@ def descargar_informe_online(tipo_servicio):
     )
 
     bucket = "kia-verbatims-data"
-    
-    if tipo_servicio == "Servicio técnico":
-        nombre_archivo = "informeposventa_decargar.pdf"
-        nombre_descarga = "informe_posventa.pdf"
-    elif tipo_servicio == "Ventas":
-        nombre_archivo = "informeventas_decargar.pdf"
-        nombre_descarga = "informeventas_decargar.pdf"
-    else:
-        st.error("Tipo de servicio no reconocido.")
+
+    archivos = {
+        "Servicio técnico": ("informeposventa_decargar.pdf", "informe_posventa.pdf"),
+        "Ventas": ("informeventas_decargar.pdf", "informe_ventas.pdf"),
+    }
+
+    if tipo_servicio not in archivos:
+        st.error("❌ Tipo de servicio no reconocido.")
         return
-    
+
+    nombre_archivo, nombre_descarga = archivos[tipo_servicio]
     key = f"informes/{nombre_archivo}"
 
-    # Descargamos el archivo a memoria
-    buffer = BytesIO()
-    s3.download_fileobj(bucket, key, buffer)
-    buffer.seek(0)
+    try:
+        buffer = BytesIO()
+        s3.download_fileobj(bucket, key, buffer)
+        buffer.seek(0)
 
-    st.download_button(
-        label="📄 Descargar PDF",
-        data=buffer,
-        file_name=nombre_descarga,
-        mime="application/pdf"
-    )
+        st.download_button(
+            label="📄 Descargar PDF",
+            data=buffer,
+            file_name=nombre_descarga,
+            mime="application/pdf"
+        )
+
+    except Exception as e:
+        st.error(f"Error al descargar el informe: {e}")

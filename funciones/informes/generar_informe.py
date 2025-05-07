@@ -3,7 +3,7 @@ import pandas as pd
 from openai import OpenAI
 import tiktoken
 import streamlit as st
-import s3fs
+import boto3
 
 OPENAI_API_KEY = st.secrets["openai"]["api_key"]
 client = OpenAI(api_key=OPENAI_API_KEY)
@@ -245,20 +245,19 @@ if __name__ == "__main__":
 
 
 
-def print_informe(tipo_servicio):
-    # Configuración S3
-    fs = s3fs.S3FileSystem(
-        key=st.secrets["aws"]["access_key_id"],
-        secret=st.secrets["aws"]["secret_access_key"],
-        client_kwargs={"region_name": st.secrets["aws"]["region"]}
+def print_informe(tipo_servicio: str) -> str:
+    s3 = boto3.client(
+        "s3",
+        aws_access_key_id=st.secrets["aws"]["access_key_id"],
+        aws_secret_access_key=st.secrets["aws"]["secret_access_key"],
+        region_name=st.secrets["aws"]["region"],
     )
 
+    bucket = "kia-verbatims-data"
     if tipo_servicio == "Ventas":
-        ruta = "kia-verbatims-data/informes/informeventas.txt"
+        key = "informes/informeventas.txt"
+    elif tipo_servicio == "Servicio técnico":
+        key = "informes/informeposventa.txt"
     else:
-        ruta = "kia-verbatims-data/informes/informeposventa.txt"
-
-    with fs.open(ruta, 'r') as f:
-        informe = f.read()
-
-    return informe
+        st.error("❌ Tipo de servicio no reconocido.")
+        return ""

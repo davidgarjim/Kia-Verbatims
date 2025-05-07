@@ -99,7 +99,7 @@ if segmentacion == 'General':
         #with st.expander("Ver Conclusiones Generales"):
         informe = funcion_informe(df_actual, tipo_servicio)
         st.markdown(informe)
-        descargar_informe(informe)
+        #descargar_informe(informe)
 
         st.header('Gráficos Generales:')
    

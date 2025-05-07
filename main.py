@@ -16,7 +16,7 @@ if "authenticated" not in st.session_state:
     st.session_state.authenticated = False
 
 if not st.session_state.authenticated:
-     st.title("🔐 Introduce la contraseña para acceder")
+     st.title("Introduce la contraseña:")
      pwd = st.text_input("Contraseña", type="password")
      
      if st.button("Entrar"):
@@ -46,14 +46,13 @@ def cargar_parquets_s3() -> tuple[pl.DataFrame, pl.DataFrame]:
     p_ev   = f"s3://{BUCKET}/{PREFIX}/df_eventas.parquet"
     p_posv = f"s3://{BUCKET}/{PREFIX}/df_eposventa.parquet"
 
-    # 1) Leer con pandas + pyarrow + s3fs
+    # Leer con pandas + pyarrow + s3fs
     df_ev_pd   = pd.read_parquet(p_ev, engine="pyarrow", storage_options=storage_opts)
     df_posv_pd = pd.read_parquet(p_posv, engine="pyarrow", storage_options=storage_opts)
 
-    # 2) Convertir a Polars
+    # Convertir a Polars
     return pl.from_pandas(df_ev_pd), pl.from_pandas(df_posv_pd)
 
-    return df_eventas, df_eposventa
 
 @st.cache_data
 def cargar_excels_s3() -> tuple[pd.DataFrame, pd.DataFrame]:

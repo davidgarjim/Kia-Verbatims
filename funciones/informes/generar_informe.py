@@ -4,6 +4,7 @@ from openai import OpenAI
 import tiktoken
 import streamlit as st
 import boto3
+from botocore.exceptions import ClientError
 
 OPENAI_API_KEY = st.secrets["openai"]["api_key"]
 client = OpenAI(api_key=OPENAI_API_KEY)
@@ -265,7 +266,8 @@ def print_informe(tipo_servicio):
             return ""
 
         response = s3.get_object(Bucket=bucket, Key=key)
-        contenido = response['Body'].read().decode('utf-8')
+        contenido = response['Body'].read().decode('utf-8', errors='replace')
+
 
         return contenido
     

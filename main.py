@@ -147,15 +147,10 @@ if segmentacion == 'General':
         st.header('Gráficos Generales:')
    
         # =================== COMENTARIOS POR FECHA =================== #
-        df_semana = (
-                df_actual2
-                .filter(pl.col("respondido").is_not_null())
-                .with_columns(pl.col("respondido").dt.truncate("1w").alias("Semana"))
-                .group_by("Semana")
-                .agg(pl.count().alias("Comentarios"))
-                .sort("Semana")
-            )
-        df_semana_pd = df_semana.to_pandas()
+        df_temp = df_actual2[df_actual2["respondido"].notnull()].copy()
+        df_temp["Semana"] = pd.to_datetime(df_temp["respondido"]).dt.to_period("W").apply(lambda r: r.start_time)
+        df_semana_pd = df_temp.groupby("Semana").size().reset_index(name="Comentarios").sort_values("Semana")
+
 
         fig1 = px.line(
             df_semana_pd,

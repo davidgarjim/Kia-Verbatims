@@ -46,28 +46,62 @@ storage_opts = {
 }
 PREFIX = "data/bbdd_procesado"
 
+import boto3
+import pyarrow.parquet as pq
+from io import BytesIO
+import pandas as pd
+
 @st.cache_data
-def cargar_parquets_s3() -> tuple[pl.DataFrame, pl.DataFrame]:
-    p_ev   = f"s3://{BUCKET}/{PREFIX}/df_eventas.parquet"
-    p_posv = f"s3://{BUCKET}/{PREFIX}/df_eposventa.parquet"
+def cargar_parquets_s3() -> tuple[pd.DataFrame, pd.DataFrame]:
+    s3 = boto3.client(
+        "s3",
+        aws_access_key_id=st.secrets["aws"]["access_key_id"],
+        aws_secret_access_key=st.secrets["aws"]["secret_access_key"],
+        region_name=st.secrets["aws"]["region"],
+    )
 
-    # Leer con pandas + pyarrow + s3fs
-    df_ev_pd   = pd.read_parquet(p_ev, engine="pyarrow", storage_options=storage_opts)
-    df_posv_pd = pd.read_parquet(p_posv, engine="pyarrow", storage_options=storage_opts)
+    bucket = "kia-verbatims-data"
+    prefix = "data/bbdd_procesado"
 
-    # Convertir a Polars
-    return pl.from_pandas(df_ev_pd), pl.from_pandas(df_posv_pd)
+    def leer_parquet_s3(key: str) -> pd.DataFrame:
+        buffer = BytesIO()
+        s3.download_fileobj(bucket, f"{prefix}/{key}", buffer)
+        buffer.seek(0)
+        return pq.read_table(buffer).to_pandas()
 
+    df_ev = leer_parquet_s3("df_eventas.parquet")
+    df_posv = leer_parquet_s3("df_eposventa.parquet")
+
+    return df_ev, df_posv
+
+
+import boto3
+import pandas as pd
+from io import BytesIO
 
 @st.cache_data
 def cargar_excels_s3() -> tuple[pd.DataFrame, pd.DataFrame]:
-    # Asumiendo que tus Excel concatenados se llaman exactamente así en el mismo prefijo:
-    path_sales   = f"s3://{BUCKET}/{PREFIX}/sales_concatenado.xlsx"
-    path_service = f"s3://{BUCKET}/{PREFIX}/service_concatenado.xlsx"
-    # pandas detecta automáticamente el motor 'openpyxl' para .xlsx y acepta storage_options
-    df_sales   = pd.read_excel(path_sales,   engine="openpyxl", storage_options=storage_opts)
-    df_service = pd.read_excel(path_service, engine="openpyxl", storage_options=storage_opts)
+    s3 = boto3.client(
+        "s3",
+        aws_access_key_id=st.secrets["aws"]["access_key_id"],
+        aws_secret_access_key=st.secrets["aws"]["secret_access_key"],
+        region_name=st.secrets["aws"]["region"],
+    )
+
+    bucket = st.secrets["aws"]["bucket"]
+    prefix = "data/bbdd_procesado"
+
+    def leer_excel(key: str) -> pd.DataFrame:
+        buffer = BytesIO()
+        s3.download_fileobj(bucket, f"{prefix}/{key}", buffer)
+        buffer.seek(0)
+        return pd.read_excel(buffer, engine="openpyxl")
+
+    df_sales   = leer_excel("sales_concatenado.xlsx")
+    df_service = leer_excel("service_concatenado.xlsx")
+
     return df_sales, df_service
+
 
 # … luego en tu flujo principal:
 df_eventas, df_eposventa = cargar_parquets_s3()
